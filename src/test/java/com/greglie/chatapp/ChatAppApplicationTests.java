@@ -1,21 +1,18 @@
 package com.greglie.chatapp;
 
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
-import org.springframework.boot.test.context.SpringBootTest;
+import com.greglie.chatapp.repository.UserRepository;
 import org.junit.jupiter.api.Test;
-import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
-import org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
 
-// Use this annotation to explicitly exclude the parts of the context that are failing
 @SpringBootTest
-@EnableAutoConfiguration(exclude = {
-    DataSourceAutoConfiguration.class,
-    HibernateJpaAutoConfiguration.class
-})
 class ChatAppApplicationTests {
+
+    @MockBean
+    private UserRepository userRepository;
 
     @Test
     void contextLoads() {
-        // Test passes if the context loads without the DB auto-config
+        
     }
-}
+    }
